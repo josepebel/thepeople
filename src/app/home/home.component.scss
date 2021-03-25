@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @import "../../styles.scss";
 @import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
@@ -8,19 +7,20 @@
 }
 
 h1{
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 700;
-  line-height: 4rem;
-  color: black;
+  line-height: 4.5rem;
+  color: $cBlack;
   margin: 4rem auto;
 
   span{
-    color: #FFB500;
+    color: $cOrange;
   }
 }
 .left{
   margin-top: 4rem;
 }
+
 img{
   width: 100%;
   height: auto;
@@ -31,11 +31,11 @@ img{
   width: 52rem;
   height: 5rem;
   border-radius: 1.25rem;
-  background-color: white;
+  background-color: $cWhite;
   z-index: 999;
-  position: relative;
+
   padding: 0.5rem 0.5rem 0.5rem 1.25rem;
-  margin-top: -16rem;
+  margin-top: -14rem;
 
   * {
     border: none;
@@ -48,8 +48,13 @@ input{
 
   button{
     width: 10%;
-    color: white;
+    color: $cWhite;
     font-size: 1.1rem;
+    background-color: $cOrange;
+
+    &:hover{
+      background-color: $cOrangeHover;
+    }
   }
 
 
