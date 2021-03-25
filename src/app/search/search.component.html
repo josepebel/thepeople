@@ -1,0 +1,28 @@
+<div class="container searcher shadpw-sm">
+  <div class="row justify-content-center my-0">
+    <div class="name-search col-8 col-sm-8 col-md-4 col-lg-4">
+      <label>Busca por nombre o apellido</label>
+      <input type="text">
+    </div>
+    <div class="date-search col-8 col-sm-8 col-md-3 col-lg-3">
+      <label>Fecha de nacimiento</label>
+      <input type="text">
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div *ngFor="let person of people"  class="perfil col-6 col-sm-6 col-md-6 col-lg-4">
+      <div class="image">
+        <img src={{person.photo}}>
+      </div>
+      <div class="info shadow">
+        <h3>{{person.name}}</h3>
+        <p>{{person.dob}}</p>
+        <p class="badge bg-dark badge-pill">{{person.job}}</p>
+      </div>
+    </div>
+  </div>
+</div>
