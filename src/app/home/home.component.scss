@@ -1,27 +1,26 @@
 @import "../../styles.scss";
 @import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
-
-.container{
- margin-top: 5rem;
+.container {
+  margin-top: 5rem;
 }
 
-h1{
+h1 {
   font-size: 4rem;
   font-weight: 700;
-  line-height: 4.5rem;
+  line-height: 4.75rem;
   color: $cBlack;
   margin: 4rem auto;
 
-  span{
+  span {
     color: $cOrange;
   }
 }
-.left{
+.left {
   margin-top: 4rem;
 }
 
-img{
+img {
   width: 100%;
   height: auto;
   z-index: -99;
@@ -33,30 +32,27 @@ img{
   border-radius: 1.25rem;
   background-color: $cWhite;
   z-index: 999;
-
   padding: 0.5rem 0.5rem 0.5rem 1.25rem;
-  margin-top: -14rem;
+  margin-top: -12rem;
 
   * {
     border: none;
     padding: 1.25rem 0.5rem;
     border-radius: 1.25rem;
   }
-input{
-  width: 90%;
-}
 
-  button{
+  input {
+    width: 90%;
+  }
+
+  button {
     width: 10%;
     color: $cWhite;
     font-size: 1.1rem;
     background-color: $cOrange;
 
-    &:hover{
+    &:hover {
       background-color: $cOrangeHover;
     }
   }
-
-
-
 }

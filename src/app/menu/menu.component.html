@@ -3,14 +3,14 @@
 
   <div class="ms-auto">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a (click)="ChangeBgInicio()" class="nav-link" href="#">Inicio</a>
+      <li class="nav-item">
+        <a (click)="ChangeBgInicio()" class="nav-link" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
       </li>
       <li class="nav-item">
-        <a (click)="ChangeBgBusqueda()" class="nav-link" href="#">Búsqueda</a>
+        <a (click)="ChangeBgBusqueda()" class="nav-link" routerLink="/search" routerLinkActive="active">Búsqueda</a>
       </li>
       <li class="nav-item">
-        <button class="btn btn-warning">Subir nuevo</button>
+        <button (click)="newUpload()" class="btn">Subir nuevo</button>
       </li>
     </ul>
   </div>
