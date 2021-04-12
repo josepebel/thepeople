@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {NavigationEnd, Router} from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -8,21 +8,20 @@ import {Router} from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  flag!: boolean;
-
-  ChangeBgBusqueda(){
-    this.flag = true;
-  }
-
-  ChangeBgInicio(){
-    this.flag = false;
-
-  }
-
+  bgWhite = false
 
   constructor(private router: Router) { }
 
   ngOnInit() {
+    this.router.events.subscribe (route=>{
+      if(route instanceof NavigationEnd){
+        if(route.url == "/"){
+          this.bgWhite = false
+        } else {
+          this.bgWhite = true
+        }
+      }
+    })
   }
 
   newUpload(){

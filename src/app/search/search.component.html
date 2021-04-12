@@ -1,5 +1,8 @@
-<div class="container searcher shadpw-sm">
+<!--
+<div class="container searcher shadow-sm">
+
   <div class="row justify-content-center my-0">
+
     <div class="name-search col-8 col-sm-8 col-md-4 col-lg-4">
       <label>Busca por nombre o apellido</label>
       <input type="text">
@@ -14,15 +17,62 @@
 
 <div class="container">
   <div class="row">
-    <div *ngFor="let person of people"  class="perfil col-6 col-sm-6 col-md-6 col-lg-4">
-      <div class="image">
-        <img src={{person.photo}}>
-      </div>
+    <a *ngFor="let person of allPersons"  class="perfil col-6 col-sm-6 col-md-6 col-lg-4">
+      <div class="box-img" [ngStyle]="{'background-image': 'url('+ person.photo +')' }"></div>
+      <div class="image"><img src={{person.photo}} ></div>
       <div class="info shadow">
         <h3>{{person.name}}</h3>
-        <p>{{person.dob}}</p>
+        <p>{{person.birthdate}}</p>
         <p class="badge bg-dark badge-pill">{{person.job}}</p>
       </div>
+    </a>
+  </div>
+</div> -->
+
+<div class="head-box container mb-4">
+  <div class="row justify-content-center my-0">
+    <!-- <div class="name-search col-8 col-sm-8 col-md-4 col-lg-4">
+      <label>Busca por nombre o apellido</label>
+      <input type="text" />
+    </div> -->
+    <!-- <div class="date-search col-8 col-sm-8 col-md-3 col-lg-3">
+      <label>Fecha de nacimiento</label>
+      <input type="text" />
+    </div> -->
+    <mat-form-field class="example-full-width name-search col-8 col-sm-8 col-md-4 col-lg-4">
+      <mat-label>Buscar por nombre o apellido</mat-label>
+      <input matInput placeholder="Nombre o apellido" [value]="nameSearch">
+    </mat-form-field>
+    <mat-form-field class="date-search col-8 col-sm-8 col-md-3 col-lg-3" appearance="fill">
+      <mat-label>Rango de fechas</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate (dateChange)="startChange($event)" placeholder="Inicio">
+        <input matEndDate (dateChange)="endChange($event)" placeholder="Fin">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div *ngFor="let person of allPersons" class="col-sm-6 col-md-4 col-lg-3">
+      <a
+        [routerLink]="['/detail']"
+        routerLinkActive="router-link-active"
+        class="box-card"
+      >
+        <div
+          class="box-img"
+          [ngStyle]="{ 'background-image': 'url(' + person.photo + ')' }"
+        ></div>
+        <div class="box-data">
+          <h2>{{ person.name }}</h2>
+          <p class="date">{{ person.birthdate }}</p>
+          <p class="ptag">{{ person.job }}</p>
+        </div>
+      </a>
     </div>
   </div>
 </div>

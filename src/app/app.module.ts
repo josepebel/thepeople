@@ -9,9 +9,16 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { DetailComponent } from './detail/detail.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+
+
 
 @NgModule({
-  declarations: [						
+  declarations: [
     AppComponent,
       MenuComponent,
       FooterComponent,
@@ -22,9 +29,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NoopAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule
+
   ],
-  providers: [],
+  providers: [{provide: MAT_DATE_LOCALE, useValue: "es-ES"},],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

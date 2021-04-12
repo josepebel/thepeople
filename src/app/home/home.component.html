@@ -9,8 +9,8 @@
     </div>
 
     <div class="search shadow-sm">
-      <input type="text" placeholder="Buscar por nombre o apellido">
-      <button><i class="bi bi-search"></i></button>
+      <input #name type="text" placeholder="Buscar por nombre o apellido">
+      <button (click)="search(name.value)"><i class="bi bi-search"></i></button>
     </div>
 
   </div>
