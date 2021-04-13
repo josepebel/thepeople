@@ -9,7 +9,7 @@
     </div>
 
     <div class="search shadow-sm">
-      <input #name type="text" placeholder="Buscar por nombre o apellido">
+      <input #name type="text" placeholder="Buscar por nombre o apellido" (keydown.enter)="search(name.value)">
       <button (click)="search(name.value)"><i class="bi bi-search"></i></button>
     </div>
 

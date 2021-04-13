@@ -40,11 +40,11 @@
       <input type="text" />
     </div> -->
     <mat-form-field class="example-full-width name-search col-8 col-sm-8 col-md-4 col-lg-4">
-      <mat-label>Buscar por nombre o apellido</mat-label>
-      <input matInput placeholder="Nombre o apellido" [value]="nameSearch">
+      <mat-label class="name-label">Buscar por nombre o apellido</mat-label>
+      <input class="name-input" matInput placeholder="Nombre o apellido" [value]="nameSearch">
     </mat-form-field>
-    <mat-form-field class="date-search col-8 col-sm-8 col-md-3 col-lg-3" appearance="fill">
-      <mat-label>Rango de fechas</mat-label>
+    <mat-form-field class="date-search col-8 col-sm-8 col-md-3 col-lg-3" >
+      <mat-label class="date-label">Rango de fechas</mat-label>
       <mat-date-range-input [rangePicker]="picker">
         <input matStartDate (dateChange)="startChange($event)" placeholder="Inicio">
         <input matEndDate (dateChange)="endChange($event)" placeholder="Fin">
@@ -59,7 +59,7 @@
   <div class="row">
     <div *ngFor="let person of allPersons" class="col-sm-6 col-md-4 col-lg-3">
       <a
-        [routerLink]="['/detail']"
+        [routerLink]="['/detail/'+ person._id]"
         routerLinkActive="router-link-active"
         class="box-card"
       >

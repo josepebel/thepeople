@@ -4,5 +4,5 @@ export class Person {
   photo?:     any;
   birthdate?: string;
   job?:       string;
-  _id?:        string;
+  _id?:       any;
 }

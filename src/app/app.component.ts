@@ -1,3 +1,4 @@
+import { NavigationEnd, Router } from '@angular/router';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'people';
+  title = 'thepeople';
+
+  constructor(private router: Router){
+
+  }
+
+  isLogin!: boolean;
+  ngOnInit(){
+
+    this.router.events.subscribe (route=>{
+      if(route instanceof NavigationEnd){
+        if(route.url == "/login" || route.url == "/register"){
+          this.isLogin = true
+        } else {
+          this.isLogin = false
+        }
+      }
+    })
+  }
 }

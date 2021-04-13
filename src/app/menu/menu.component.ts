@@ -25,7 +25,7 @@ export class MenuComponent implements OnInit {
   }
 
   newUpload(){
-    this.router.navigate(["/detail"])
+    this.router.navigate(["/login"])
   }
 
 }
